@@ -1,0 +1,11 @@
+﻿@model IEnumerable<shop.Models.Computer>
+
+<div id="searchresults">
+    <h3>Все товары : @Model.First().Name</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+</div>

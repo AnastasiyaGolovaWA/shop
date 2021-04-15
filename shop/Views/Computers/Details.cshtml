@@ -1,0 +1,115 @@
+﻿@model shop.Models.Computer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul>
+    <li><a class="active" href="/Computers">Главная</a></li>
+    <li><a href="/Computers/AboutCompany">О компании</a></li>
+</ul>
+<h2>О товаре</h2>
+<head>
+    <style>
+        body {
+            background-color: #9999c8;
+        }
+
+        .ui-jqgrid .ui-pg-input {
+            height: 20px;
+        }
+
+        .ui-jqgrid .ui-jqgrid-pager {
+            height: 50px;
+        }
+
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #98bf21;
+            padding: 3px 7px 2px 7px;
+        }
+
+        th {
+            text-align: left;
+            padding: 5px;
+            background-color: #4646ca;
+            color: #fff;
+        }
+
+        .alt td {
+            background-color: #EAF2D3;
+        }
+
+        #button {
+            background-color: gray;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            width: 90px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .color {
+            background-color: white;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111;
+                }
+    </style>
+</head>
+<div>
+    <h4>Компьютер</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th> Название</th>
+            <th> Описание</th>
+            <th> Цена</th>
+            <th> Объём памяти (Гб)</th>
+            <th> Цвет</th>
+        </tr>
+        <tr>
+            <td> @Html.DisplayFor(model => model.Name)</td>
+            <td> @Html.DisplayFor(model => model.Description)</td>
+            <td> @Html.DisplayFor(model => model.Price)</td>
+            <td> @Html.DisplayFor(model => model.Memory)</td>
+            <td> @Html.DisplayFor(model => model.Colour)</td>
+        </tr>
+        </table>
+</div>
+<p>
+    @Html.ActionLink("Вернуться в меню", "Index")
+</p>
